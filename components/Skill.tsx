@@ -26,7 +26,17 @@ const Skill = ({ directionLeft }: Props) => {
         }
       >
         <div className={"flex items-center justify-center h-full"}>
-          <p className={"text-2xl font-bold text-black opacity-100"}>100%</p>
+          <motion.p
+            initial={{
+              x: directionLeft ? -200 : 200,
+              opacity: 0,
+            }}
+            transition={{ duration: 1 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className={"text-2xl font-bold text-black opacity-100"}
+          >
+            100%
+          </motion.p>
         </div>
       </div>
     </div>

@@ -48,6 +48,9 @@ const Hero = ({}: Props) => {
           <Link href="#projects">
             <button className={"heroButton"}>Projects</button>
           </Link>
+          <Link href="#contact">
+            <button className={"heroButton"}>Contact me !</button>
+          </Link>
         </div>
       </div>
     </div>
