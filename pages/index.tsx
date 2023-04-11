@@ -49,7 +49,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         <ContactMe />
       </section>
       <Link href="#hero">
-        <footer className={"sticky bottom-5 w-full cursor-pointer "}>
+        <footer className={"sticky bottom-5 w--min-full cursor-pointer "}>
           <div
             className={
               "h-10 w-10 mx-auto rounded-full filter grayscale hover:grayscale-0 cursor-pointer bg-[#F7AB0A] opacity-50"
