@@ -58,11 +58,10 @@ const Projects = ({ projects }: Props) => {
               <p className={"text-lg text-center md:text-left"}>
                 {project.summary}
               </p>
-              <Link
-                className={"underline decoration-[#F7AB0A]/50"}
-                href={project.linkToBuild}
-              >
-                See more here on GitHub
+              <Link href={project.linkToBuild}>
+                <span className={"underline decoration-[#F7AB0A]/50 pt-2"}>
+                  See more here on GitHub
+                </span>
               </Link>
             </div>
           </div>
