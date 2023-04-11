@@ -34,7 +34,7 @@ const Projects = ({ projects }: Props) => {
             <Image
               src={urlFor(project.image).url()}
               width={120}
-              height={80}
+              height={120}
               alt={"imageProject"}
             />
             <div className={"space-y-10 px-0 md:px-10 max-w-6xl"}>
