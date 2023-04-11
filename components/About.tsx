@@ -22,21 +22,21 @@ const About = ({ pageInfo }: Props) => {
       >
         about
       </h3>
-      <motion.div
-        initial={{
-          x: -200,
-          opacity: 0,
-        }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.2 }}
-        viewport={{ once: true }}
-        // @ts-ignore
-
-        className={
-          "-mb-20 w-56 flex-shrink-0 rounded rounded-md object-cover md:w-64 xl:w-96 md:mb-0"
-        }
-      >
-        <img src={urlFor(pageInfo?.profilePicture).url()} alt={"aboutPIc"} />
+      <motion.div>
+        <motion.img
+          initial={{
+            x: -200,
+            opacity: 0,
+          }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2 }}
+          viewport={{ once: true }}
+          // @ts-ignore
+          src={urlFor(pageInfo?.profilePicture).url()}
+          className={
+            "-mb-20 w-56 flex-shrink-0 object-cover md:w-64 xl:w-96 md:mb-0"
+          }
+        />
       </motion.div>
       <div className={"space-y-10 px-0 md:px-10"}>
         <h4 className={"text-4xl font-semibold"}>
