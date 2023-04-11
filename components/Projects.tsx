@@ -33,7 +33,6 @@ const Projects = ({ projects }: Props) => {
           >
             <Image
               src={urlFor(project.image).url()}
-              width={80}
               height={80}
               alt={"imageProject"}
             />
