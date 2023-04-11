@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "@/typing";
+import { urlFor } from "@/sanity";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-const About = ({}: Props) => {
+const About = ({ pageInfo }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -28,7 +30,8 @@ const About = ({}: Props) => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2 }}
         viewport={{ once: true }}
-        src="https://res.cloudinary.com/dpeyhfmjh/image/upload/v1680797346/production/laptop_xk82ea.jpg"
+        // @ts-ignore
+        src={urlFor(pageInfo?.profilePicture).url()}
         className={
           "-mb-20 w-56 flex-shrink-0 object-cover md:w-64 xl:w-96 rounded rounded-xl md:mb-0"
         }
@@ -39,20 +42,7 @@ const About = ({}: Props) => {
           <span className={"underline decoration-[#F7AB0A]/50"}>little</span>{" "}
           background
         </h4>
-        <p className={"text-base"}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam,
-          amet asperiores consectetur cumque, earum fuga, fugiat molestias nam
-          nemo nostrum quod repellat tempora. Accusantium animi autem corporis
-          dignissimos distinctio dolorem dolores, doloribus earum, fuga in ipsa
-          maxime neque nostrum officia officiis perferendis provident quae quis
-          rem saepe! Autem consectetur consequuntur deserunt distinctio
-          doloribus ea eaque eveniet, exercitationem maiores nam nesciunt nihil
-          officia praesentium quos, sequi suscipit tempore tenetur velit
-          voluptate, voluptatibus? Accusamus animi eligendi esse, fugiat nihil
-          obcaecati perspiciatis quaerat quidem sunt vitae! Deserunt, expedita
-          illo illum incidunt iste laudantium nesciunt nihil non nulla odit
-          officiis quam quo suscipit unde?
-        </p>
+        <p className={"text-base"}>{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

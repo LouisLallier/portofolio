@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Skill from "@/components/Skill";
+import Skill from "./Skill";
+import { Skill as SkillType } from "@/typing";
 
-type Props = {};
+type Props = { skills: SkillType[] };
 
 const Skills = ({}: Props) => {
   return (

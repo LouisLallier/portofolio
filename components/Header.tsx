@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Social } from "@/typing";
 
-type Props = {};
+type Props = {
+  socials: Social[];
+};
 
-export default function Header({}: Props) {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
+export default function Header({ socials }: Props) {
   return (
     <header
       className={
@@ -20,43 +16,28 @@ export default function Header({}: Props) {
     >
       <motion.div
         className={"flex flex-row items-center"}
-        initial={
-          isMounted
-            ? {
-                x: -500,
-                opacity: 0,
-                scale: 0.5,
-              }
-            : false
-        }
-        animate={
-          isMounted
-            ? {
-                x: 0,
-                opacity: 1,
-                scale: 1,
-              }
-            : false
-        }
+        initial={{
+          x: -500,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
         transition={{
           duration: 1.5,
         }}
       >
-        <SocialIcon
-          url="https://twitter.com/jaketrent"
-          fgColor="gray"
-          bgColor="transparent"
-        />{" "}
-        <SocialIcon
-          url="https://twitter.com/jaketrent"
-          fgColor="gray"
-          bgColor="transparent"
-        />{" "}
-        <SocialIcon
-          url="https://twitter.com/jaketrent"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
 
       <div

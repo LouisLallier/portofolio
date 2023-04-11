@@ -6,8 +6,8 @@ export default defineType({
   type: 'document',
   fields: [
     {
-      name: 'name',
-      title: 'Name',
+      name: 'firstName',
+      title: 'FirstName',
       type: 'string',
     },
     {

@@ -4,13 +4,16 @@ import BackgroundCircles from "@/components/BackgroundCircles";
 import Image from "next/image";
 import me from "../public/me.jpeg";
 import Link from "next/link";
+import { PageInfo } from "@/typing";
+import { urlFor } from "@/sanity";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-const Hero = ({}: Props) => {
+const Hero = ({ pageInfo }: Props) => {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, I'm Louis",
+      // @ts-ignore
+      `Hi, I'm ${pageInfo?.name}`,
       "Welcome to my <Portfolio />",
       "Using Next.js & TypeScript",
     ],
@@ -20,15 +23,17 @@ const Hero = ({}: Props) => {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
+      {/*<img src={urlFor(pageInfo?.heroImage).url()} />*/}
       <Image
-        src={me}
+        src={urlFor(pageInfo?.heroImage).url()}
         alt={"me"}
+        height={150}
         width={150}
         className={"rounded-full relative mx-auto object-cover"}
       />
       <div className="z-20">
         <h2 className={"text-sm uppercase text-gray-500 pb-2 tracking-[15px]"}>
-          FullStack Developer
+          {pageInfo?.role}
         </h2>
 
         <h1 className={"text-4xl lg:text-5xl font-semibold scroll-px-10"}>
