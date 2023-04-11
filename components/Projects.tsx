@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Project } from "@/typing";
 import { urlFor } from "@/sanity";
+import Link from "next/link";
 
 type Props = { projects: Project[] };
 
@@ -58,6 +59,7 @@ const Projects = ({ projects }: Props) => {
               <p className={"text-lg text-center md:text-left"}>
                 {project.summary}
               </p>
+              <Link href={project.linkToBuild}>See more here on GitHub</Link>
             </div>
           </div>
         ))}
