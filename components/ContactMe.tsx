@@ -29,9 +29,11 @@ const ContactMe = ({}: Props) => {
       >
         Contact
       </h3>
+
       <div className={"flex flex-col space-y-10 pt-5"}>
         <h4 className={"text-2xl md:text-4xl w-full font-semibold text-center"}>
           Want to contact me ?{" "}
+
           <span className={"underline decoration-[#F7AB0A]/50"}>
             Let's talk.
           </span>
