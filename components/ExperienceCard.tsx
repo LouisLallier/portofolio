@@ -12,7 +12,7 @@ const ExperienceCard = ({ experience }: Props) => {
   return (
     <article
       className={
-        "flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 mt-4 h-[570px] w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-5 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden"
+        "w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
       }
     >
       <motion.img
@@ -24,10 +24,14 @@ const ExperienceCard = ({ experience }: Props) => {
         src={urlFor(experience?.companyImage).url()}
         alt="logo"
       />
-      <div className={"px-0 md:px-10"}>
+      <div
+        className={
+          "px-0 md:px-10 h-1/2 overflow-y-scroll scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80"
+        }
+      >
         <h4 className={"text-4xl font-light"}>{experience.jobTitle}</h4>
         <p className={"font-bold text-2xl mt-1"}>{experience.company}</p>
-        <div className={"flex space-x-2 my-2"}>
+        <div className={"flex space-x-2 my-2 flex-wrap"}>
           {experience.technologies.map((technology) => (
             <Image
               key={technology._id}
@@ -46,7 +50,7 @@ const ExperienceCard = ({ experience }: Props) => {
         </p>
         <ul
           className={
-            "list-disc space-y-4 ml-5 text-lg md:h-52 overflow-y-scroll"
+            "list-disc space-y-4 ml-5 text-lg md:h-52 overflow-y-scroll "
           }
         >
           {experience.points.map((point, i) => (

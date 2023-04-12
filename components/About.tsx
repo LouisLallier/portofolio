@@ -33,7 +33,7 @@ const About = ({ pageInfo }: Props) => {
         // @ts-ignore
         src={urlFor(pageInfo?.profilePicture).url()}
         className={
-          "-mb-20 w-56 flex-shrink-0 object-cover md:w-64 xl:w-96 rounded rounded-md md:mb-0"
+          "hidden md:flex -mb-20 w-56 flex-shrink-0 object-cover md:w-64 xl:w-96 rounded rounded-md md:mb-0"
         }
       />
       <div className={"space-y-10 px-0 md:px-10"}>
