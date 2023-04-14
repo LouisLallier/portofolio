@@ -54,7 +54,9 @@ const ContactMe = ({}: Props) => {
         {/*form*/}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className={"w-[380px] flex flex-col space-y-2 w-fit mx-auto"}
+          className={
+            "w-[380px] md:w-full flex flex-col space-y-2 w-fit mx-auto"
+          }
         >
           <div className={"flex flex-col space-y-2 md:space-x-2"}>
             <input
