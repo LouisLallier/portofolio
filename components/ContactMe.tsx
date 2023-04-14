@@ -19,7 +19,7 @@ const ContactMe = ({}: Props) => {
   return (
     <div
       className={
-        "h-screen flex w-[380px] relative flex-col text-center md:text-left md:flex-row px-10 justify-evenly mx-auto items-center"
+        "h-screen flex w-[380px] md:w-[600px] relative flex-col text-center md:text-left md:flex-row px-10 justify-evenly mx-auto items-center"
       }
     >
       <h3
@@ -33,7 +33,6 @@ const ContactMe = ({}: Props) => {
       <div className={"flex flex-col space-y-10 pt-5"}>
         <h4 className={"text-2xl md:text-4xl w-full font-semibold text-center"}>
           Want to contact me ?{" "}
-
           <span className={"underline decoration-[#F7AB0A]/50"}>
             Let's talk.
           </span>
