@@ -33,8 +33,8 @@ const Projects = ({ projects }: Props) => {
           >
             <Image
               src={urlFor(project.image).url()}
-              width={80}
-              height={80}
+              width={120}
+              height={120}
               alt={"imageProject"}
             />
             <div className={"space-y-10 px-0 md:px-10 max-w-6xl"}>
@@ -59,7 +59,11 @@ const Projects = ({ projects }: Props) => {
               <p className={"text-lg text-center md:text-left"}>
                 {project.summary}
               </p>
-              <Link href={project.linkToBuild}>See more here on GitHub</Link>
+              <Link href={project.linkToBuild}>
+                <span className={"underline decoration-[#F7AB0A]/50 pt-2"}>
+                  See more here on GitHub
+                </span>
+              </Link>
             </div>
           </div>
         ))}
