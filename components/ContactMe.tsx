@@ -58,7 +58,7 @@ const ContactMe = ({}: Props) => {
             "w-[380px] md:w-full flex flex-col space-y-2 w-fit mx-auto"
           }
         >
-          <div className={"flex flex-col space-y-2 md:space-x-2"}>
+          <div className={"flex flex-col space-y-2"}>
             <input
               {...register("name")}
               placeholder={"Name"}
